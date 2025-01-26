@@ -1,2 +1,8 @@
 ###
-GET http://127.0.0.1:8000/api/search/?query=суд
+GET http://127.0.0.1:8000/api_ru/news
+
+###
+GET http://127.0.0.1:8000/api_uz/news
+
+###
+GET http://127.0.0.1:8000/api_uz/gallery
