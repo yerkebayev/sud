@@ -112,16 +112,17 @@ WSGI_APPLICATION = 'sud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'qsud',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
+        'USER': 'marat8jh',  # Your PythonAnywhere username
+        'PASSWORD': 'SalemMarat2004',  # Your provided password
+        'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        'PORT': '3306',  # MySQL default port
         'OPTIONS': {
-            'charset': 'utf8mb4',  # Use utf8mb4 for Cyrillic support
+            'charset': 'utf8mb4',  # Ensure proper Cyrillic support
         },
     }
 }
+
 
 
 
