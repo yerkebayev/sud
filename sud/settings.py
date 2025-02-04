@@ -45,10 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'news_ru',
-    'news_uz',
-    'news_oz',
-    'news_qa'
+    'sud_ru',
 ]
 
 MIDDLEWARE = [
