@@ -22,9 +22,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('sud_ru.urls')),  # Include sud_ru app URLs
-    path('', include('news_uz.urls')),  # Include news_uz app URLs
-    path('', include('news_oz.urls')),  # Include news_uz app URLs
-    path('', include('news_qa.urls')),  # Include news_uz app URLs
 ]
 
 if settings.DEBUG:

@@ -46,9 +46,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'sud_ru',
-    'news_uz',
-    'news_oz',
-    'news_qa'
 ]
 
 MIDDLEWARE = [
