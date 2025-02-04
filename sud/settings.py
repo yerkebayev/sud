@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOW_ALL_ORIGINS = True  # For testing only!
+CORS_ALLOW_ALL_ORIGINS = False  # For testing only!
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:4174",  # Allow your frontend's local development URL
@@ -112,15 +112,15 @@ WSGI_APPLICATION = 'sud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
-        'NAME': 'sud',  # Include your PythonAnywhere username as a prefix
-        # 'USER': 'marat8jh',  # Your PythonAnywhere username
-        'USER': 'root',  # Your PythonAnywhere username
-        # 'PASSWORD': 'SalemMarat2004',  # Your provided password
-        'PASSWORD': 'password',  # Your provided password
-        # 'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
-        'HOST': '127.0.0.1',  # Host address
+        # 'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
+        # 'NAME': 'sud',  # Include your PythonAnywhere username as a prefix
+        'USER': 'marat8jh',  # Your PythonAnywhere username
+        # 'USER': 'root',  # Your PythonAnywhere username
+        'PASSWORD': 'SalemMarat2004',  # Your provided password
+        # 'PASSWORD': 'password',  # Your provided password
+        'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        # 'HOST': '127.0.0.1',  # Host address
         'PORT': '3306',  # MySQL default port
         'OPTIONS': {
             'charset': 'utf8mb4',  # Ensure proper Cyrillic support
