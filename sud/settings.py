@@ -27,7 +27,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-x&bn_ara2s&7drj)cp&3n$**%mb+93$((!3i4=*3g1x(^n1h=v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'sud.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
         # 'NAME': 'sud',  # Include your PythonAnywhere username as a prefix
         'USER': 'marat8jh',  # Your PythonAnywhere username
@@ -167,10 +167,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
