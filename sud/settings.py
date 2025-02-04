@@ -17,7 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'sud/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +27,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'sud/media')
 SECRET_KEY = 'django-insecure-x&bn_ara2s&7drj)cp&3n$**%mb+93$((!3i4=*3g1x(^n1h=v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -113,10 +113,14 @@ WSGI_APPLICATION = 'sud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
-        'USER': 'marat8jh',  # Your PythonAnywhere username
-        'PASSWORD': 'SalemMarat2004',  # Your provided password
-        'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        # 'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
+        'NAME': 'sud',  # Include your PythonAnywhere username as a prefix
+        # 'USER': 'marat8jh',  # Your PythonAnywhere username
+        'USER': 'root',  # Your PythonAnywhere username
+        # 'PASSWORD': 'SalemMarat2004',  # Your provided password
+        'PASSWORD': 'password',  # Your provided password
+        # 'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        'HOST': '127.0.0.1',  # Host address
         'PORT': '3306',  # MySQL default port
         'OPTIONS': {
             'charset': 'utf8mb4',  # Ensure proper Cyrillic support
@@ -163,6 +167,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
