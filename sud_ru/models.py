@@ -1,34 +1,35 @@
 from django.db import models
 from django.utils.timezone import now
 
-class NewsOz(models.Model):
+class ArchiveRu(models.Model):
+    TYPE_CHOICES = (
+        ('news', 'News'),
+        ('gallery', 'Gallery'),
+    )
+
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES)  # News or Gallery
     title = models.CharField(max_length=255)
-    pre_description = models.CharField(max_length=2000)
-    description = models.TextField()
-    added_date = models.DateTimeField(default=now, editable=False)  # Updated to DateTimeField
-    author = models.CharField(max_length=255, blank=True, null=True)
-    author_position = models.CharField(max_length=255, blank=True, null=True)
-    photo = models.ImageField(upload_to='news_photos/', blank=True, null=True)
+    description = models.TextField(blank=True, null=True)  # Used for News, ignored for Gallery
+    pre_description = models.CharField(max_length=2000, blank=True, null=True)  # Used for News
+    added_date = models.DateTimeField(default=now, editable=False)  # Date of addition
+    author = models.CharField(max_length=255, blank=True, null=True)  # Used for News
+    author_position = models.CharField(max_length=255, blank=True, null=True)  # Used for News
+    photo = models.ImageField(upload_to='archive_photos/', blank=True, null=True)  # Common photo field
+    created_at = models.DateTimeField(auto_now_add=True)  # Used for Gallery
 
     def __str__(self):
-        return self.title
+        return f"{self.type.upper()}: {self.title}"
 
-# Gallery Model
-class GalleryOz(models.Model):
-    title = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.title
-
-# Photo Model
-class PhotoOz(models.Model):
-    gallery = models.ForeignKey(GalleryOz, related_name='photos', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='gallery_photos/')
+class PhotoRu(models.Model):
+    archive = models.ForeignKey(ArchiveRu, related_name='photos', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='archive_photos/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"Photo for {self.archive.title}"
 
-class ConnectionOz(models.Model):
+class ConnectionRu(models.Model):
     title = models.CharField(max_length=255)
     postal_code = models.CharField(max_length=100)
     email_address = models.EmailField()
@@ -41,7 +42,7 @@ class ConnectionOz(models.Model):
         return self.title
 
 
-class GovernanceOz(models.Model):
+class GovernanceRu(models.Model):
     position = models.CharField(max_length=255)  # Position of the person
     fullname = models.CharField(max_length=255)  # Full name
     working_hours = models.CharField(max_length=255)  # Working hours (e.g., "9:00 AM - 5:00 PM")
@@ -52,14 +53,14 @@ class GovernanceOz(models.Model):
         return f"{self.fullname} - {self.position}"
 
 
-class ResolutionOz(models.Model):
+class ResolutionRu(models.Model):
     title = models.CharField(max_length=255)  # Title of the resolution
     link = models.URLField()  # URL link to the resolution document or page
 
     def __str__(self):
         return self.title
 
-class ProvisionOz(models.Model):
+class ProvisionRu(models.Model):
     title = models.CharField(max_length=255)  # Title of the provision
     link = models.URLField()  # URL link to the provision document or page
 

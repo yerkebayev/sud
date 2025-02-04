@@ -27,7 +27,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'sud/media')
 SECRET_KEY = 'django-insecure-x&bn_ara2s&7drj)cp&3n$**%mb+93$((!3i4=*3g1x(^n1h=v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'news_ru',
+    'sud_ru',
     'news_uz',
     'news_oz',
     'news_qa'
@@ -116,10 +116,14 @@ WSGI_APPLICATION = 'sud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
-        'USER': 'marat8jh',  # Your PythonAnywhere username
-        'PASSWORD': 'SalemMarat2004',  # Your provided password
-        'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        # 'NAME': 'marat8jh$sud',  # Include your PythonAnywhere username as a prefix
+        'NAME': 'sud',  # Include your PythonAnywhere username as a prefix
+        # 'USER': 'marat8jh',  # Your PythonAnywhere username
+        'USER': 'root',  # Your PythonAnywhere username
+        # 'PASSWORD': 'SalemMarat2004',  # Your provided password
+        'PASSWORD': 'password',  # Your provided password
+        # 'HOST': 'marat8jh.mysql.pythonanywhere-services.com',  # Host address
+        'HOST': '127.0.0.1',  # Host address
         'PORT': '3306',  # MySQL default port
         'OPTIONS': {
             'charset': 'utf8mb4',  # Ensure proper Cyrillic support
