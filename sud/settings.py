@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'sud_ru',
+    'sud_uz',
+    'sud_oz',
+    'sud_qql',
+    'sud_qqc',
 ]
 
 MIDDLEWARE = [
