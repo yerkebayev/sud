@@ -104,7 +104,7 @@ class GalleryQqlListAPIView(ListAPIView):
     queryset = ArchiveQql.objects.filter(type='gallery').order_by('-created_at')
     serializer_class = ArchiveQqlSerializer
 
-class ArchiveByYearQqlAPIView(ListAPIView):
+class ArchiveByYearAPIView(ListAPIView):
     """
     Retrieve all ArchiveQql entries for a specific year.
     """
@@ -125,7 +125,7 @@ class ArchiveByYearQqlAPIView(ListAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class ArchiveByYearMonthQqlAPIView(ListAPIView):
+class ArchiveByYearMonthAPIView(ListAPIView):
     """
     Retrieve all ArchiveQql entries for a specific year and month.
     """
