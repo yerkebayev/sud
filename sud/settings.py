@@ -128,6 +128,7 @@ DATABASES = {
         'PORT': '3306',  # MySQL default port
         'OPTIONS': {
             'charset': 'utf8mb4',  # Ensure proper Cyrillic support
+            'sql_mode': 'STRICT_TRANS_TABLES'
         },
     }
 }
