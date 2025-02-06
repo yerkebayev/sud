@@ -22,10 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('sud_ru.urls')),  # Include sud_ru app URLs
-    path('', include('sud_uz.urls')),  # Include sud_ru app URLs
-    path('', include('sud_oz.urls')),  # Include sud_ru app URLs
-    path('', include('sud_qql.urls')),  # Include sud_ru app URLs
-    path('', include('sud_qqc.urls')),  # Include sud_ru app URLs
+    path('', include('sud_uz.urls')),  # Include sud_uz app URLs
+    path('', include('sud_oz.urls')),  # Include sud_oz app URLs
+    path('', include('sud_qql.urls')),  # Include sud_qql app URLs
+    path('', include('sud_qqc.urls')),  # Include sud_qqc app URLs
 
 ]
 
